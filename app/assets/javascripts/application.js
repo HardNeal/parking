@@ -2,4 +2,3 @@
 //= require jquery-3.3.1
 //= require slick
 //= require activestorage
-//= require_tree .
