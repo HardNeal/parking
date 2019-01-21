@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'paperclip'
+gem 'kaminari'
+gem 'activeadmin'
+gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'jquery-rails'

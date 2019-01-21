@@ -1,0 +1,355 @@
+<body>
+    <header>
+        <div class="container">
+            <div class="sp_wrapper">
+                <div class="location"></div>
+
+                <div class="faq">
+                    <a class="faq_link" href="#">FAQ</a>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="header_wrapper">
+        <div class="header_bottom">
+            <div class="nav_wrapper">
+                <div class="logo">
+                    <a class="logo_icon" href="<%= root_path %>">
+                        <img src="/uploads/logo.svg" alt="logo">
+                    </a>
+                </div>
+
+                <div class="nav">
+                    <div class="phones">
+                        <a href="#" class="phones_link">+373 69 15 09 16</a>
+                        <a href="#" class="phones_link">+373 68 44 69 91</a>
+
+                        <a class="" href="#"></a>
+                    </div>
+
+                    <div class="menu_wrapper">
+                        <div class="menu_hamb">
+                            <span class="menu_hamb-1"></span>
+                            <span class="menu_hamb-2"></span>
+                        </div>
+
+                        <ul class="menu" id="menu">
+                            <li>
+                                <a class="menu_link" href="<%= contacts_path %>">Despre noi</a>
+                            </li>
+
+                            <li class="menu_hover">
+                                <a class="menu_link" href="#">
+                                    Produse
+
+                                    <svg
+                                        class="angle_submenu"
+                                        width="10"
+                                        height="6"
+                                        viewbox="0 0 10 6"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M5.83709 4.6098L1.29221 0.159755C1.1871 0.0567475 1.04677 0 0.897152 0C0.74753 0 0.607207 0.0567475 0.50209 0.159755L0.167391 0.487394C-0.0503999 0.700889 -0.0503999 1.04788 0.167391 1.26105L3.98384 4.99793L0.163156 8.73895C0.0580388 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0580388 9.4096 0.163156 9.51269L0.497855 9.84025C0.603055 9.94325 0.743295 10 0.892917 10C1.04254 10 1.18286 9.94325 1.28798 9.84025L5.83709 5.38614C5.94246 5.2828 6.00033 5.14484 6 4.99817C6.00033 4.85094 5.94246 4.71305 5.83709 4.6098Z"
+                                            transform="translate(10) rotate(90)"
+                                            fill="#000"
+                                        ></path>
+                                    </svg>
+                                </a>
+
+                                <ul class="sub_menu">
+                                    <li class="sub_menu-item">
+                                        <a class="sub_menu-link" href="<%= parking_path %>">STACK PARIKING SYSTEMS</a>
+                                    </li>
+
+                                    <li class="sub_menu-item">
+                                        <a class="sub_menu-link" href="<%= puzzle_path %>">PUZZLE PARIKING SYSTEMS</a>
+                                    </li>
+
+                                    <!-- <li class="sub_menu-item">
+                                        <a class="sub_menu-link" href="#">PIT PUZZLE PARIKING SYSTEMS</a>
+                                    </li> -->
+
+                                    <!-- <li class="sub_menu-item">
+                                        <a class="sub_menu-link" href="#">
+                                            FULL AUTOMATED PARIKING SYSTEMS
+                                        </a>
+                                    </li> -->
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a class="menu_link" href="#">Proiecte</a>
+                            </li>
+
+                            <li>
+                                <a class="menu_link" href="#">BLOG</a>
+                            </li>
+
+                            <li>
+                                <a class="menu_link" href="<%= contacts_path %>">Contacteaza-ne</a>
+                            </li>
+
+                            <li>
+                                <a class="menu_link" href="#">
+                                    <svg class="search_icon" width="14" height="15" viewbox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.7871 13.6626L10.3359 9.94962C11.2233 8.85844 11.7095 7.48552 11.7095 6.05624C11.7095 2.71688 9.08299 0 5.85474 0C2.62649 0 6.9187e-09 2.71688 6.9187e-09 6.05624C6.9187e-09 9.3956 2.62649 12.1125 5.85474 12.1125C7.06667 12.1125 8.22158 11.7344 9.20899 11.0166L12.6864 14.7578C12.8318 14.9139 13.0273 15 13.2368 15C13.4351 15 13.6232 14.9218 13.766 14.7796C14.0694 14.4776 14.0791 13.9768 13.7871 13.6626ZM5.85474 1.57989C8.24092 1.57989 10.1821 3.58793 10.1821 6.05624C10.1821 8.52456 8.24092 10.5326 5.85474 10.5326C3.46855 10.5326 1.52732 8.52456 1.52732 6.05624C1.52732 3.58793 3.46855 1.57989 5.85474 1.57989Z" fill="#333333"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sp_promo_wrapper">
+        <div class="container">
+           <!--  <div class="breadcrumbs">
+                <a class="breadcrumbs_link" href="#">home /</a>
+
+                <a class="breadcrumbs_link" href="#">products /</a>
+
+                <a class="breadcrumbs_link" href="#">Stack Parking System</a>
+            </div> -->
+
+            <div class="sp_promo">
+                <h1 class="sp_promo_title"><%= Puzzle.last.title unless Puzzle.last.nil? %></h1>
+
+                <p class="sp_promo_text">
+                    <%= Puzzle.last.title unless Puzzle.last.nil? %>    
+                </p>
+
+                <a class="sp_promo_btn" href="#">GET A QUOTE</a>
+            </div>
+        </div>
+    </div>
+
+    <form id="form">
+        <div class="form">
+            <a class="form_close" href="#">
+                <i class="far fa-times-circle" aria-hidden="true"></i>
+            </a>
+
+            <h2>Send Enquiry</h2>
+
+            <label>
+                Name
+
+                <input id="name" type="text" placeholder="Name" required="required"></input>
+            </label>
+
+            <label>
+                Email
+
+                <input id="email" type="email" placeholder="Email" required="required"></input>
+            </label>
+
+            <label>
+                Phone
+
+                <input id="tel" type="tel" placeholder="Phone" required="required"></input>
+            </label>
+
+            <label>
+                Message
+
+                <textarea name="#" cols="0" rows="5" placeholder="hi, i like your puzzleparking system, and wonna order it..." required="required"></textarea>
+            </label>
+
+            <div class="submit">
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="sp_features_wrapper">
+        <div class="sp_features">
+            <div class="container">
+                <h2 class="sp_features_title">Special Features</h2>
+
+                <div class="row">
+                    <div class="sp_features_item col-12 col-md-4 d-flex flex-column justify-content-between">
+                      <% PuzzleFeature.where(position: 'left').each do |puzzle_feature| %>
+                        <div class="row p-b">
+                            <span class="sp_features_icon <%= puzzle_feature.icon %> col-3"></span>
+
+                            <div class="col-9">
+                                <h5 class="sp_features_name"><%= puzzle_feature.title %></h5>
+
+                                <p class="sp_features_text">
+                                  <%= puzzle_feature.desc %>
+                                </p>
+                            </div>
+                        </div>
+                      <% end %>
+                    </div>
+
+                    <div class="sp_features_item col-12 col-md-4 d-flex flex-column justify-content-between">
+                      <% PuzzleFeature.where(position: 'left').each do |puzzle_feature| %>
+                        <div class="row p-b">
+                            <span class="sp_features_icon <%= puzzle_feature.icon %> col-3"></span>
+
+                            <div class="col-9">
+                                <h5 class="sp_features_name"><%= puzzle_feature.title %></h5>
+
+                                <p class="sp_features_text">
+                                  <%= puzzle_feature.desc %>
+                                </p>
+                            </div>
+                        </div>
+                      <% end %>
+                    </div>
+
+                    <div class="sp_features_item col-12 col-md-4 sp_bg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="visual_demo">
+        <div class="container">
+            <h4 class="visual_demo_title">
+                Case: If you wish to retrieve Car No. 7
+            </h4>
+
+            <p class="visual_demo_desc">
+                Parking makes us go in circles, see what our circles have in store for you...
+            </p>
+
+            <div class="d-flex justify-content-center flex-column align-items-center">
+                <button class="mp4player" id="play">Retrieve Car №7</button>
+
+                <div id="video-placeholder">
+                    <iframe width="860" height="400" src="https://www.youtube.com/embed/jmAmAhruLQE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="gallery row justify-content-between">
+            <div class="gallery_item col-12 col-md-6 pos-rel">
+                <h2 class="gallery_item_title">SEE VIDEO</h2>
+                <div class='video-wrapper'>
+                    <a href="javascript://" class='button'></a>
+                    <div class='video'>
+                        <iframe id="player" width="560" height="300" src="https://www.youtube.com/embed/jmAmAhruLQE?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <a class="close" href="#"><img src="images/close.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery_item col-12 col-md-6">
+                <h2 class="gallery_item_title">SEE GALLERY</h2>
+                <div class="row">
+                        <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/juHayWuaaoQ/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking.jpg"></a>
+                        <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/eWFdaPRFjwE/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking2.jpg"></a>
+                        <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/i2KibvLYjqk/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking3.jpg"></a>
+                        <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/RFgO9B_OR4g/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking4.jpg"></a>
+                        <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/7bwQXzbF6KE/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking5.jpg"></a>
+                        <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/NhU0nUR7920/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking6.jpg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row flex-sm-column flex-md-row">
+                <div class="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start">
+                    <h5 class="footer_item-title">Company</h5>
+                    <a href="<%= contacts_path %>" class="footer_item-link">About Us</a>
+                    <a href="<%= puzzle_path %>" class="footer_item-link">Products</a>
+                    <!-- <a href="#" class="footer_item-link">Projects</a> -->
+                    <!-- <a href="#" class="footer_item-link">Blog</a> -->
+                    <a href="<%= contacts_path %>" class="footer_item-link">Contact Us</a>
+                    <!-- <a href="#" class="footer_item-link">Sitemap</a> -->
+                </div>
+
+                <div class="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start">
+                    <h5 class="footer_item-title">Products</h5>
+                    <a href="#" class="footer_item-link">Stack Parking System</a>
+                    <a href="#" class="footer_item-link">Puzzle Parking System</a>
+                    <!-- <a href="#" class="footer_item-link">Pit Puzzle Parking System</a> -->
+                    <!-- <a href="#" class="footer_item-link">Full Automated Parking System</a> -->
+                </div>
+
+                <div class="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start">
+                    <h5 class="footer_item-title">Partners</h5>
+
+                    <a class="footer_item-link" href="#">Ford Enterprise</a>
+
+                    <a class="footer_item-link" href="#">Gerre</a>
+
+                    <a class="footer_item-link" href="#">Diodio</a>
+
+                    <a class="footer_item-link" href="#">Feegway</a>
+
+                    <a class="footer_item-link" href="#">Rouney</a>
+                </div>
+
+                <div class="col-12 col-md-3 text-center">
+                    <h5 class="footer_item-title">Follow Us</h5>
+
+                    <a class="social_icon" href="#">
+                        <svg width="35" height="34" viewbox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M33.0483 16.6458C33.0483 25.2657 25.8953 32.2917 17.0241 32.2917C8.15295 32.2917 1 25.2657 1 16.6458C1 8.02595 8.15295 1 17.0241 1C25.8953 1 33.0483 8.02595 33.0483 16.6458Z" stroke="#333333" stroke-width="2"></path>
+
+                            <path d="M9.82914 10.8398H6.79139V21.7214H2.18894V10.8398H0V7.01553H2.18894V4.54082C2.18894 2.77114 3.04868 0 6.83236 0L10.2416 0.0139459V3.72601H7.76796C7.36222 3.72601 6.79169 3.92422 6.79169 4.76841V7.01909H10.2312L9.82914 10.8398Z" transform="translate(11.4749 6.45764)" fill="#333333"></path>
+                        </svg>
+                    </a>
+
+                    <a class="social_icon" href="#">
+                        <svg width="35" height="34" viewbox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M33.0483 16.6458C33.0483 25.2657 25.8953 32.2917 17.0241 32.2917C8.15295 32.2917 1 25.2657 1 16.6458C1 8.02595 8.15295 1 17.0241 1C25.8953 1 33.0483 8.02595 33.0483 16.6458Z" transform="translate(0.0682373)" stroke="#333333" stroke-width="2"></path>
+
+                            <path d="M13.4473 0H6.11239C2.73713 0 0 2.6763 0 5.97656V13.1484C0 16.4487 2.73713 19.125 6.11239 19.125H13.4473C16.8225 19.125 19.5597 16.4487 19.5597 13.1484V5.97656C19.5597 2.6763 16.8225 0 13.4473 0ZM17.7259 13.1484C17.7259 15.4554 15.8066 17.332 13.4473 17.332H6.11239C3.75301 17.332 1.83372 15.4554 1.83372 13.1484V5.97656C1.83372 3.66961 3.75301 1.79297 6.11239 1.79297H13.4473C15.8066 1.79297 17.7259 3.66961 17.7259 5.97656V13.1484Z" transform="translate(7.3125 7.08325)" fill="#333333"></path>
+
+                            <path d="M4.88991 0C2.18946 0 0 2.1408 0 4.78125C0 7.4217 2.18946 9.5625 4.88991 9.5625C7.59037 9.5625 9.77983 7.4217 9.77983 4.78125C9.77983 2.1408 7.59037 0 4.88991 0ZM4.88991 7.76953C3.20534 7.76953 1.83372 6.42839 1.83372 4.78125C1.83372 3.13291 3.20534 1.79297 4.88991 1.79297C6.57449 1.79297 7.94611 3.13291 7.94611 4.78125C7.94611 6.42839 6.57449 7.76953 4.88991 7.76953Z" transform="translate(12.2023 11.8645)" fill="#333333"></path>
+
+                            <path d="M0.651581 1.2742C1.01144 1.2742 1.30316 0.988963 1.30316 0.637102C1.30316 0.28524 1.01144 0 0.651581 0C0.291723 0 0 0.28524 0 0.637102C0 0.988963 0.291723 1.2742 0.651581 1.2742Z" transform="translate(21.6973 10.8689)" fill="#333333"></path>
+                        </svg>
+                    </a>
+
+                    <a class="social_icon" href="#">
+                        <svg width="35" height="34" viewbox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M33.7727 17C33.7727 25.8155 26.4576 33 17.3864 33C8.31512 33 1 25.8155 1 17C1 8.18451 8.31512 1 17.3864 1C26.4576 1 33.7727 8.18451 33.7727 17Z" transform="translate(0.136475)" stroke="#333333" stroke-width="2"></path>
+
+                            <path d="M20.2563 1.90552C19.5112 2.22856 18.7098 2.44706 17.8692 2.54464C18.7274 2.04189 19.386 1.24641 19.6969 0.29698C18.8939 0.762754 18.004 1.10065 17.0578 1.28277C16.2998 0.493351 15.2197 0 14.0236 0C11.7289 0 9.86781 1.81976 9.86781 4.06348C9.86781 4.38197 9.90469 4.69199 9.97598 4.98957C6.52213 4.82017 3.45973 3.20254 1.40986 0.74336C1.05221 1.34338 0.847034 2.04189 0.847034 2.78646C0.847034 4.19591 1.58125 5.44019 2.69576 6.1687C2.01484 6.14779 1.3736 5.96506 0.813562 5.6599C0.813252 5.67717 0.813252 5.69445 0.813252 5.71142C0.813252 7.68027 2.24636 9.32245 4.14715 9.6955C3.79879 9.78883 3.43091 9.83823 3.05248 9.83823C2.78409 9.83823 2.52406 9.81308 2.27054 9.7658C2.79927 11.3798 4.33373 12.5547 6.1527 12.5877C4.73013 13.6778 2.93843 14.3272 0.990841 14.3272C0.656118 14.3272 0.324495 14.3081 0 14.2702C1.83819 15.4236 4.02318 16.096 6.36996 16.096C14.014 16.096 18.1943 9.90429 18.1943 4.5341C18.1943 4.35803 18.1903 4.18257 18.1823 4.00863C18.9949 3.43588 19.6994 2.7204 20.2563 1.90552Z" transform="translate(7.9162 9.20825)" fill="#333333"></path>
+                        </svg>
+                    </a>
+
+                    <a class="social_icon" href="#">
+                        <svg width="35" height="34" viewbox="0 0 35 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M33.7727 17C33.7727 25.8155 26.4576 33 17.3864 33C8.31512 33 1 25.8155 1 17C1 8.18451 8.31512 1 17.3864 1C26.4576 1 33.7727 8.18451 33.7727 17Z" transform="translate(0.227295)" stroke="#333333" stroke-width="2"></path>
+
+                            <path d="M17.6916 1.12924C17.027 0.327171 15.8002 0 13.4571 0H4.95181C2.55512 0 1.30746 0.348276 0.645447 1.2022C0 2.03478 0 3.26153 0 4.95937V8.19545C0 11.4847 0.765818 13.1548 4.95181 13.1548H13.4572C15.4891 13.1548 16.615 12.8661 17.3434 12.1582C18.0904 11.4324 18.4091 10.2472 18.4091 8.19545V4.95937C18.4091 3.16885 18.3591 1.93487 17.6916 1.12924ZM11.8187 7.02418L7.95647 9.07374C7.87012 9.11956 7.7757 9.1423 7.6814 9.1423C7.57463 9.1423 7.46809 9.11311 7.37373 9.05511C7.19605 8.94579 7.08756 8.75024 7.08756 8.53933V4.45336C7.08756 4.2428 7.19576 4.04744 7.37308 3.93806C7.55046 3.82868 7.77107 3.8212 7.9551 3.91828L11.8173 5.95463C12.0138 6.05822 12.1372 6.2642 12.1375 6.48893C12.1378 6.71383 12.0149 6.92011 11.8187 7.02418Z" transform="translate(8.40894 10.1191)" fill="#333333"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+
+    <script type="text/javascript" src="/js/why.js"></script>
+
+    <script src="/vendor/slick-slider/slick/slick.min.js"></script>
+    <script src="/vendor/fancybox/jquery.fancybox.js"></script>
+
+    <script type="text/javascript" src="/js/script.js"></script>
+
+    <script type="text/javascript" src="/js/main.js"></script>

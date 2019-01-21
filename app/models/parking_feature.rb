@@ -1,0 +1,2 @@
+class ParkingFeature < ApplicationRecord
+end

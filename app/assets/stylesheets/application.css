@@ -11,7 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  *= require slick
+ *= require animate
+ *= require bootstrap-grid
+ *= require fonts
+ *= require fonts.css
+ *= require reset
+ *= require style
  *= require slick-theme
- *= require_tree .
  *= require_self
  */

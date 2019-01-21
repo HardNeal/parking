@@ -16,7 +16,7 @@
         <div class="header_bottom">
             <div class="nav_wrapper">
                 <div class="logo">
-                    <a class="logo_icon" href="#">
+                    <a class="logo_icon" href="<%= root_path %>">
                         <img src="uploads/logo.svg" alt="logo">
                     </a>
                 </div>
@@ -27,7 +27,7 @@
 
                         <a class="phones_link" href="#">+373 68 44 69 91</a>
 
-                        <!-- <a class="form_trigger" href="#">Free advice</a> -->
+                        <a class="" href="#"></a>
                     </div>
 
                     <div class="menu_wrapper">
@@ -38,7 +38,7 @@
 
                         <ul class="menu" id="menu">
                             <li>
-                                <a class="menu_link" href="#">Despre noi</a>
+                              <a class="menu_link" href="<%= contacts_path %>">Despre noi</a>
                             </li>
 
                             <li class="menu_hover">
@@ -63,22 +63,22 @@
 
                             <ul class="sub_menu">
                                 <li class="sub_menu-item">
-                                    <a class="sub_menu-link" href="#">STACK PARIKING SYSTEMS</a>
+                                    <a class="sub_menu-link" href="<%= parking_path %>">STACK PARIKING SYSTEMS</a>
                                 </li>
 
                                 <li class="sub_menu-item">
-                                    <a class="sub_menu-link" href="#">PUZZLE PARIKING SYSTEMS</a>
+                                    <a class="sub_menu-link" href="<%= puzzle_path %>">PUZZLE PARIKING SYSTEMS</a>
                                 </li>
 
-                                <li class="sub_menu-item">
+                                <!-- <li class="sub_menu-item">
                                     <a class="sub_menu-link" href="#">PIT PUZZLE PARIKING SYSTEMS</a>
-                                </li>
+                                </li> -->
 
-                                <li class="sub_menu-item">
+                                <!-- <li class="sub_menu-item">
                                     <a class="sub_menu-link" href="#">
                                         FULL AUTOMATED PARIKING SYSTEMS
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
 
@@ -91,7 +91,7 @@
                         </li>
 
                         <li>
-                            <a class="menu_link" href="#">Contacteaza-ne</a>
+                            <a class="menu_link" href="<%= contacts_path %>">Contacteaza-ne</a>
                         </li>
 
                         <li>
@@ -116,7 +116,7 @@
                 <span>pentru parcare</span>
             </h1>
 
-            <a class="promo_btn" href="#" style="text-decoration: none;">Mai mult</a>
+            <a class="promo_btn" href="<%= parking_path %>" style="text-decoration: none;">Mai mult</a>
         </div>
     </div>
 </div>
@@ -138,93 +138,35 @@
         </ul>
 
         <div class="tab_container col-12 col-md-6">
-            <h3 class="d_active tab_drawer_heading" rel="tab1"></h3>
-
+          <h3 class="d_active tab_drawer_heading" rel="tab1"></h3>
             <div class="tab_content" id="tab1">
+              <% DescriptionSystem.all.each do |desc_sys| %>
                 <div class="d-flex inner_text_wrapper">
-                    <span class="features_icon col-3 design"></span>
+                    <span class="features_icon col-3 <%= desc_sys.icon %>"></span>
 
                     <div class="features_inner col-8">
-                        <h5 class="features_title">Principiul</h5>
+                        <h5 class="features_title"><%= desc_sys.title %></h5>
 
                         <p class="features_inner-text">
-                            Principiul nostru pentru Design este punerea impreună a factorilor și conceptelor de forma pentru a oferi cele mai potrivite solutii  pentru clientii nostri.
+                          <%= desc_sys.desc %>
                         </p>
                     </div>
                 </div>
-
-                <div class="d-flex inner_text_wrapper">
-                    <span class="features_icon col-3 quality"></span>
-
-                    <div class="features_inner col-8">
-                        <h5 class="features_title">Calitate</h5>
-
-                        <p class="features_inner-text">
-                            Ne concentram pe o calitate constanta, fiabilitate, o funcționare ușoară și tot ceea ce e nevoie pentru a oferi o experiență de uzabilitate zi de zi placuta si performanta.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="d-flex inner_text_wrapper">
-                    <span class="features_icon col-3 manuf"></span>
-
-                    <div class="features_inner col-8">
-                        <h5 class="features_title">Proiectarea</h5>
-
-                        <p class="features_inner-text">
-                            Noi  venim cu idei reale,si suntem gata sa oferim cele mai neprevazute solutii de parcare inteligente, prin perfecționarea ingineriei noastre.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="d-flex inner_text_wrapper">
-                    <span class="features_icon col-3 management"></span>
-
-                    <div class="features_inner col-8">
-                        <h5 class="features_title">Mentenata</h5>
-
-                        <p class="features_inner-text">
-                            Relatia noastra cu clientii nu se incheie dupa vanzare si instalare- avem echipa profesionista, gata sa se ocupe cu mentenanta si grija de sistemele noastre de parcare.
-                        </p>
-                    </div>
-                </div>
+              <% end %>
             </div>
 
             <h3 class="tab_drawer_heading" rel="tab2"></h3>
 
             <div class="tab_content" id="tab2">
+              <% ProductDescription.all.each do |product| %>
                 <div class="inner_text_wrapper">
-                    <h5 class="features_title">Sisteme de parcare Twin</h5>
+                    <h5 class="features_title"><%= product.title %></h5>
 
                     <p class="hidden_inner-text">
-                        sunt menite sa dubleze spatiul de parcare de la parter / subsol de parcare.
+                      <%= product.desc %>
                     </p>
                 </div>
-
-                <div class="inner_text_wrapper">
-                    <h5 class="features_title">Sistemul de parcare Puzzle</h5>
-
-                    <p class="hidden_inner-text">
-                        Este destinat utilizarii optime a spatiului pe teren. 
-Este proiectat electromecanic pentru a merge vertical pâna la 9 nivele si orizontal, la cât mai mult spatiu disponibil pe teren.
-                    </p>
-                </div>
-
-                <div class="inner_text_wrapper">
-                    <h5 class="features_title">Sisteme de parcare Rotary</h5>
-
-                    <p class="hidden_inner-text">
-                        Sunt destinate utilizarii optime a spatiului pe teren.Este proiectat electromecanic pentru a merge vertical până la 12 nivele...
-                    </p>
-                </div>
-
-                <div class="inner_text_wrapper">
-                    <h5 class="features_title">Sisteme de parcare Tower</h5>
-
-                    <p class="hidden_inner-text">
-                        Solutii maxime de parcare electromecanica. Proiectate pentru a merge pana la 20 nivele pe vertical...
-                    </p>
-                </div>
+              <% end %>
             </div>
         </div>
     </div>
@@ -235,53 +177,19 @@ Este proiectat electromecanic pentru a merge vertical pâna la 9 nivele si orizo
         <h3 class="products_title">PRODUSE</h3>
 
         <div class="products row flex-column flex-md-row justify-content-between">
+          <% Produse.all.each do |produse| %>  
             <div class="products_item col-12 col-md-3 align-self-end">
-                <h3> <a class="products_item-title" href="#" style="text-decoration: none;">Sisteme de parcare Twin</a></h3>
+                <h3> <a class="products_item-title" href="#" style="text-decoration: none;"><%= produse.title %></a></h3>
 
                 <a class="products_item-text" href="#">
-                    Stackers are aimed to double the parking space above ground / basement type parking.
+                  <%= produse.desc %>
                 </a>
 
-                <a class="products_img" href="#">
-                    <img src="uploads/pro1.jpg" alt="products photo parking">
-                </a>
-            </div>
-
-            <div class="products_item col-12 col-md-3 align-self-end">
-                <h3>  <a class="products_item-title" style="text-decoration: none;" href="#">Sistemul de parcare Puzzle</a></h3>
-
-                <a class="products_item-text" href="#" style="text-decoration: none;">
-                    Puzzle System is aimed for optimum use of space on ground. It is electro mechanically designed to ...
-                </a>
-
-                <a class="products_img" href="#">
-                    <img src="uploads/pro2.jpg" alt="products photo parking">
+                <a class="products_img" href="<%= produse.link %>">
+                    <img src="<%= image_url(produse.image.url) %>" alt="products photo parking">
                 </a>
             </div>
-
-            <div class="products_item col-12 col-md-3 align-self-end">
-                <h3>  <a class="products_item-title" href="#" style="text-decoration: none;">Sisteme de parcare Rotary</a></h3>
-
-                <a class="products_item-text" href="#" style="text-decoration: none;">
-                    Pit-Puzzle System is aimed for optimum use of space in basement type parking. It is hydraulically...
-                </a>
-
-                <a class="products_img" href="#">
-                    <img src="uploads/pro3.jpg" alt="products photo parking">
-                </a>
-            </div>
-
-            <div class="products_item col-12 col-md-3 align-self-end">
-               <h3>   <a class="products_item-title" href="#" style="text-decoration: none;">Sisteme de parcare Tower</a></h3>
-
-                <a class="products_item-text" href="#" style="text-decoration: none;">
-                    Fully automated parking systems are the state-of-the-art in technology. They have horizontal carts in each level and...
-                </a>
-
-                <a class="products_img" href="#">
-                    <img src="uploads/pro4.jpg" alt="projects photo parking">
-                </a>
-            </div>
+          <% end %>
         </div>
     </div>
 </div>
@@ -293,66 +201,21 @@ Este proiectat electromecanic pentru a merge vertical pâna la 9 nivele si orizo
         <div class="shown_info">
             <div class="row">
                 <div class="slider_nav col-12 col-md-6">
+                  <% Proiecte.all.each do |proiecte| %>
                     <div class="thumb">
-                        <a class="more project_title" href="#" id="info1">Wroclaw Megaparking</a>
+                        <a class="more project_title" href="<%= proiecte.link %>" id="<%= proiecte.id %>"><%= proiecte.title %></a>
 
-                        <a class="more project_type" href="#" id="info2">Puzzle Parking System</a>
+                        <a class="more project_type" href="<%= proiecte.link %>" id="<%= proiecte.id %>"><%= proiecte.desc %></a>
                     </div>
-
-                    <div class="thumb">
-                        <a class="more project_title" href="#" id="info3">Wroclaw Megaparking</a>
-                        <a class="more project_type" href="#" id="info4">Puzzle Parking System</a>
-                    </div>
-
-                    <div class="thumb">
-                        <a class="more project_title" href="#" id="info5">Wroclaw Megaparking</a>
-
-                        <a class="more project_type" href="#" id="info6">Puzzle Parking System</a>
-                    </div>
-
-                    <div class="thumb">
-                        <a class="more project_title" href="#" id="info7">Wroclaw Megaparking</a>
-
-                        <a class="more project_type" href="#" id="info8">Puzzle Parking System</a>
-                    </div>
-
-                    <div class="thumb">
-                        <a class="more project_title" href="#" id="info9">Wroclaw Megaparking</a>
-
-                        <a class="more project_type" href="#" id="info10">Puzzle Parking System</a>
-                    </div>
-
-                    <div class="thumb">
-                        <a class="more project_title" href="#" id="info11">Wroclaw Megaparking</a>
-
-                        <a class="more project_type" href="#" id="info12">Puzzle Parking System</a>
-                    </div>
+                  <% end %>
                 </div>
 
                 <div class="slider_main col-12 col-md-6">
+                  <% Proiecte.all.each do |proiecte| %>
                     <div class="slider_item">
-                        <img src="uploads/sliderimg.jpg" alt="parking">
+                        <img src="<%= image_url(proiecte.image.url) %>" alt="parking">
                     </div>
-
-                    <div class="slider_item">
-                        <img src="uploads/sliderimg.jpg" alt="parking">
-                    </div>
-
-                    <div class="slider_item">
-                        <img src="uploads/sliderimg.jpg" alt="parking">
-                    </div>
-
-                    <div class="slider_item">
-                        <img src="uploads/sliderimg.jpg" alt="parking">
-                    </div>
-
-                    <div class="slider_item">
-                        <img src="uploads/sliderimg.jpg" alt="parking">
-                    </div>
-
-                    <div class="slider_item">
-                        <img src="uploads/sliderimg.jpg" alt="parking">
-                    </div>
+                  <% end %>
                 </div>
             </div>
         </div>
@@ -473,18 +336,12 @@ Este proiectat electromecanic pentru a merge vertical pâna la 9 nivele si orizo
         <div class="row flex-sm-column flex-md-row">
             <div class="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start">
                 <h5 class="footer_item-title">Company</h5>
-
-                <a class="footer_item-link" href="#">About Us</a>
-
-                <a class="footer_item-link" href="#">Products</a>
-
-                <a class="footer_item-link" href="#">Projects</a>
-
-                <a class="footer_item-link" href="#">Blog</a>
-
-                <a class="footer_item-link" href="#">Contact Us</a>
-
-                <a class="footer_item-link" href="#">Sitemap</a>
+                <a href="<%= contacts_path %>" class="footer_item-link">About Us</a>
+                <a href="<%= puzzle_path %>" class="footer_item-link">Products</a>
+                <!-- <a href="#" class="footer_item-link">Projects</a> -->
+                <!-- <a href="#" class="footer_item-link">Blog</a> -->
+                <a href="<%= contacts_path %>" class="footer_item-link">Contact Us</a>
+                <!-- <a href="#" class="footer_item-link">Sitemap</a> -->
             </div>
 
             <div class="col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start">
@@ -564,25 +421,28 @@ Este proiectat electromecanic pentru a merge vertical pâna la 9 nivele si orizo
 
         <div class="feedback_popup_head">
             <h3 class="feedback_popup_title">
-                Would you like to hear more about
+                Doriți să aflați mai multe despre
             </h3>
 
-            <p class="feedback_text">Top Parking Puzzle Systems?</p>
+            <p class="feedback_text">Sisteme de parcare Top Parking?</p>
 
             <a class="feedback_popup_close" href="javascript://">
                 <i class="fa fa-times-circle" aria-hidden="true"></i>
             </a>
         </div>
 
-        <form action="#" method="post">
-            <div class="feedback_form">
-                <input type="email" placeholder="Enter your e-mail"></input>
+        <!-- <form action="#" method="post"> -->
+        <%= form_with model: Application.new, url: create_app_path, local: true do |form| %>
+          <div class="feedback_form">
+            <!-- <input type="email" placeholder="Introduce  e-mail"></input> -->
+            <%= form.email_field :email, placeholder: 'Introduce  e-mail' %>
+            
+            <button type="submit">Trimite</button>
 
-                <button type="submit">Know more</button>
-
-                <a class="feedback_close">Not today</a>
-            </div>
-        </form>
+            <a class="feedback_close">Not today</a>
+          </div>
+        <% end %>   
+        <!-- </form> -->
     </div>
 </div>
 

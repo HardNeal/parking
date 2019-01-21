@@ -1,0 +1,2 @@
+class GetQuote < ApplicationRecord
+end

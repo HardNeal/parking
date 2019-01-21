@@ -1,0 +1,2 @@
+class PuzzleFeature < ApplicationRecord
+end
