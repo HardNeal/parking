@@ -1,105 +1,97 @@
-    <body>
-        <header>
-            <div class="container">
-                <div class="sp_wrapper">
-                    <div class="location"></div>
-                    <div class="faq"><a href="#" class="faq_link">FAQ</a>
-                </div>
-            </div>
-        </header>
-        <%= render 'menu' %>
-        <div class="sp_promo_wrapper">
-            <div class="container">
-                <!-- <div class="breadcrumbs"><a href="#" class="breadcrumbs_link">home /</a><a href="#" class="breadcrumbs_link">products /</a><a href="#" class="breadcrumbs_link">Stack Parking System</a></div> -->
-                <div class="sp_promo">
-                    <h1 class="sp_promo_title"><%= Parking.last.title unless Parking.last.nil? %></h1>
-                    <p class="sp_promo_text"><%= Parking.last.desc unless Parking.last.nil? %></p>
-                    <a href="#" class="sp_promo_btn">GET A QUOTE</a>
-                </div>
-            </div>
+<%= render 'header' %>
+<%= render 'menu' %>
+<div class="sp_promo_wrapper">
+    <div class="container">
+        <!-- <div class="breadcrumbs"><a href="#" class="breadcrumbs_link">home /</a><a href="#" class="breadcrumbs_link">products /</a><a href="#" class="breadcrumbs_link">Stack Parking System</a></div> -->
+        <div class="sp_promo">
+            <h1 class="sp_promo_title"><%= Parking.last.title unless Parking.last.nil? %></h1>
+            <p class="sp_promo_text"><%= Parking.last.desc unless Parking.last.nil? %></p>
+            <a href="#" class="sp_promo_btn">GET A QUOTE</a>
         </div>
-        <form id="form">
-            <div class="form"><a href="#" class="form_close"><i aria-hidden="true" class="far fa-times-circle"></i></a>
-                <h2>Send Enquiry</h2>
-                <label>Name
-                    <input id="name" type="text" placeholder="Name" required="required">
-                </label>
-                <label>Email
-                    <input id="email" type="email" placeholder="Email" required="required">
-                </label>
-                <label>Phone
-                    <input id="tel" type="tel" placeholder="Phone" required="required">
-                </label>
-                <label>Message
-                    <textarea name="#" cols="0" rows="5" placeholder="hi, i like your puzzleparking system, and wonna order it..." required="required"></textarea>
-                </label>
-                <div class="submit">
-                    <button type="submit">Submit</button>
-                </div>
-            </div>
-        </form>
-        <div class="sp_features_wrapper">
-            <div class="sp_features">
-                <div class="container">
-                    <h2 class="sp_features_title">Special Features</h2>
-                    <div class="row">
-                        <div class="sp_features_item col-12 col-md-4 d-flex flex-column justify-content-between">
-                          <% ParkingFeature.where(position: "left").each do |parking_feature| %>
-                            <div class="row p-b"><span class="sp_features_icon <%= parking_feature.icon %> col-3"></span>
-                                <div class="col-9">
-                                    <h5 class="sp_features_name"><%= parking_feature.title %></h5>
-                                    <p class="sp_features_text"><%= parking_feature.desc %></p>
-                                </div>
-                            </div>
-                          <% end %>
-                        </div>
-                        <div class="sp_features_item col-12 col-md-4 d-flex flex-column justify-content-between">
-                          <% ParkingFeature.where(position: "right").each do |parking_feature| %>
-                            <div class="row p-b"><span class="sp_features_icon <%= parking_feature.icon %> col-3"></span>
-                                <div class="col-9">
-                                    <h5 class="sp_features_name"><%= parking_feature.title %></h5>
-                                    <p class="sp_features_text"><%= parking_feature.desc %></p>
-                                </div>
-                            </div>
-                          <% end %>
-                        </div>
-                        <div class="sp_features_item col-12 col-md-4 sp_bg"></div>
-                    </div>
-                </div>
-            </div>
+    </div>
+</div>
+<form id="form">
+    <div class="form"><a href="#" class="form_close"><i aria-hidden="true" class="far fa-times-circle"></i></a>
+        <h2>Send Enquiry</h2>
+        <label>Name
+            <input id="name" type="text" placeholder="Name" required="required">
+        </label>
+        <label>Email
+            <input id="email" type="email" placeholder="Email" required="required">
+        </label>
+        <label>Phone
+            <input id="tel" type="tel" placeholder="Phone" required="required">
+        </label>
+        <label>Message
+            <textarea name="#" cols="0" rows="5" placeholder="hi, i like your puzzleparking system, and wonna order it..." required="required"></textarea>
+        </label>
+        <div class="submit">
+            <button type="submit">Submit</button>
         </div>
+    </div>
+</form>
+<div class="sp_features_wrapper">
+    <div class="sp_features">
         <div class="container">
-            <div class="gallery row justify-content-between">
-                <div class="gallery_item col-12 col-md-6 pos-rel">
-                    <h2 class="gallery_item_title">SEE VIDEO</h2>
-                    <div class='video-wrapper'>
-                        <a href="javascript://" class='button'></a>
-                        <div class='video'>
-                            <iframe id="player" width="560" height="300" src="https://www.youtube.com/embed/jmAmAhruLQE?showinfo=0" frameborder="0" allowfullscreen></iframe>
-                            <a class="close" href="#"><img src="images/close.svg" alt=""></a>
+            <h2 class="sp_features_title">Special Features</h2>
+            <div class="row">
+                <div class="sp_features_item col-12 col-md-4 d-flex flex-column justify-content-between">
+                  <% ParkingFeature.where(position: "left").each do |parking_feature| %>
+                    <div class="row p-b"><span class="sp_features_icon <%= parking_feature.icon %> col-3"></span>
+                        <div class="col-9">
+                            <h5 class="sp_features_name"><%= parking_feature.title %></h5>
+                            <p class="sp_features_text"><%= parking_feature.desc %></p>
                         </div>
                     </div>
+                  <% end %>
                 </div>
-                <div class="gallery_item col-12 col-md-6">
-                    <h2 class="gallery_item_title">SEE GALLERY</h2>
-                    <div class="row">
-                            <a class="col-12 col-md-6 col-lg-4 img-wrap " href="/uploads/parking.jpg" data-fancybox="images" class="gallery_img"><img src="/uploads/parking.jpg"></a>
-                            <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/eWFdaPRFjwE/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking2.jpg"></a>
-                            <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/i2KibvLYjqk/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking3.jpg"></a>
-                            <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/RFgO9B_OR4g/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking4.jpg"></a>
-                            <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/7bwQXzbF6KE/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking5.jpg"></a>
-                            <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/NhU0nUR7920/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking6.jpg"></a>
+                <div class="sp_features_item col-12 col-md-4 d-flex flex-column justify-content-between">
+                  <% ParkingFeature.where(position: "right").each do |parking_feature| %>
+                    <div class="row p-b"><span class="sp_features_icon <%= parking_feature.icon %> col-3"></span>
+                        <div class="col-9">
+                            <h5 class="sp_features_name"><%= parking_feature.title %></h5>
+                            <p class="sp_features_text"><%= parking_feature.desc %></p>
                         </div>
                     </div>
+                  <% end %>
+                </div>
+                <div class="sp_features_item col-12 col-md-4 sp_bg"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="gallery row justify-content-between">
+        <div class="gallery_item col-12 col-md-6 pos-rel">
+            <h2 class="gallery_item_title">SEE VIDEO</h2>
+            <div class='video-wrapper'>
+                <a href="javascript://" class='button'></a>
+                <div class='video'>
+                    <iframe id="player" width="560" height="300" src="https://www.youtube.com/embed/jmAmAhruLQE?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    <a class="close" href="#"><img src="images/close.svg" alt=""></a>
                 </div>
             </div>
         </div>
-        <%= render 'footer' %>
-        <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
+        <div class="gallery_item col-12 col-md-6">
+            <h2 class="gallery_item_title">SEE GALLERY</h2>
+            <div class="row">
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="/uploads/parking.jpg" data-fancybox="images" class="gallery_img"><img src="/uploads/parking.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/eWFdaPRFjwE/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking2.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/i2KibvLYjqk/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking3.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/RFgO9B_OR4g/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking4.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/7bwQXzbF6KE/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking5.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="https://source.unsplash.com/NhU0nUR7920/1500x1000" data-fancybox="images" class="gallery_img"><img src="/uploads/parking6.jpg"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%= render 'footer' %>
+<script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
 
-        <script type="text/javascript" src="/js/why.js"></script>
+<script type="text/javascript" src="/js/why.js"></script>
 
-        <script src="/vendor/slick-slider/slick/slick.min.js"></script>
-        <script src="/vendor/fancybox/jquery.fancybox.js"></script>
-        <script type="/text/javascript" src="/js/script.js"></script>
-        <script type="text/javascript" src="/js/main.js"></script>
+<script src="/vendor/slick-slider/slick/slick.min.js"></script>
+<script src="/vendor/fancybox/jquery.fancybox.js"></script>
+<script type="/text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>

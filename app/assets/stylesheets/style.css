@@ -1106,6 +1106,7 @@ header .sp_wrapper .faq_link {
 }
 
 .promo_btn {
+  font-family: 'Gotham Pro';
   text-decoration: none;
   color: #000000;
   /* text-transform: uppercase; */
@@ -1117,7 +1118,7 @@ header .sp_wrapper .faq_link {
   font-size: 25px;
   position: relative;
   margin-top: 60px;
-  font-weight: 800;
+  /*font-weight: 800;*/
 }
 
 .promo_btn:after {
