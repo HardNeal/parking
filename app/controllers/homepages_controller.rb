@@ -22,6 +22,7 @@ class HomepagesController < ApplicationController
     @application = Application.new(application_params)
 
     if @application.save
+      RequestMailer.new_application(@application.email).deliver_later
       redirect_to root_path,
         notice: 'application was successfully created.'
     else
@@ -37,6 +38,8 @@ class HomepagesController < ApplicationController
     @get_quote = GetQuote.new(get_quote_params)
 
     if @get_quote.save
+      RequestMailer.new_get_quote(@get_quote.name, @get_quote.email, 
+                             @get_quote.phone, @get_quote.message).deliver_later
       redirect_to root_path,
         notice: 'get_quote was successfully created.'
     else
