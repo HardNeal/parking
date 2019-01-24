@@ -5,16 +5,22 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('/fonts/GothamPro.eot');
+  src: local('Gotham Pro'), local('GothamPro'),
+    url('/fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/GothamPro.woff') format('woff'),
+    url('/fonts/GothamPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   line-height: 1.3em;
   font-family: 'Montserrat', 'PT Sans',  Arial, "Helvetica Neue", Helvetica, sans-serif;
   background: #E5E5E5;
 }
-
-
-
-
 
 .feedback_popup {
   width: 100%;
@@ -553,7 +559,7 @@ header .sp_wrapper .faq_link {
 .header_bottom .nav_wrapper .logo_icon {
   display: inline-block;
   position: absolute;
-  top: 30px;
+  top: 13px;
   left: 35px;
 }
 
@@ -609,11 +615,12 @@ header .sp_wrapper .faq_link {
 }
 
 .header_bottom .nav_wrapper .nav .phones_link {
+  font-family: "Gotham Pro";
   display: inline-block;
   text-decoration: none;
   color: #000;
   font-size: 12px;
-  font-weight: 600;
+  /*font-weight: 600;*/
   padding: 20px 12px;
   min-width: 122px;
 }
@@ -786,14 +793,12 @@ header .sp_wrapper .faq_link {
 }
 
 .header_bottom .nav_wrapper .nav .menu_link {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: 600;
+  font-family: "Gotham Pro";
   line-height: normal;
   font-size: 12px;
-  color: #000000;
   text-transform: uppercase;
-  padding: 5px;
+  color: #000000;
+  text-decoration: none;
 }
 
 .header_bottom .nav_wrapper .nav .menu_link:hover, .header_bottom .nav_wrapper .nav .menu_link:active, .header_bottom .nav_wrapper .nav .menu_link:focus {
@@ -858,7 +863,7 @@ header .sp_wrapper .faq_link {
 
 .header_bottom .nav_wrapper .nav .menu .sub_menu {
   padding: 0;
-  background: rgba(14, 14, 14, 0.2) url("../images/maxresdefault.png") no-repeat center center;
+  background-color: #6F6F6F;
   background-size: cover;
   width: 228px;
   left: 0;
@@ -1101,6 +1106,7 @@ header .sp_wrapper .faq_link {
 }
 
 .promo_btn {
+  font-family: 'Gotham Pro';
   text-decoration: none;
   color: #000000;
   /* text-transform: uppercase; */
@@ -1112,7 +1118,7 @@ header .sp_wrapper .faq_link {
   font-size: 25px;
   position: relative;
   margin-top: 60px;
-  font-weight: 800;
+  /*font-weight: 800;*/
 }
 
 .promo_btn:after {
