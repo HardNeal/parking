@@ -863,7 +863,7 @@ header .sp_wrapper .faq_link {
 
 .header_bottom .nav_wrapper .nav .menu .sub_menu {
   padding: 0;
-  background: rgba(14, 14, 14, 0.2) url("../images/maxresdefault.png") no-repeat center center;
+  background-color: #6F6F6F;
   background-size: cover;
   width: 228px;
   left: 0;
