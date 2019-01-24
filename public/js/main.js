@@ -81,12 +81,12 @@ $('.info_slider-nav').slick({
 })
 
 
-window.onload = function() {                                  //надо раскоментировать
+window.onload = function() {
   var modal = document.getElementById('modal');
 
   setTimeout(function() {
     modal.style.display = 'block';              
-  }, 5000);
+  }, 15000);
 }
 // feedbackform
 
