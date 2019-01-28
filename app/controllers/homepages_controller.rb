@@ -14,6 +14,10 @@ class HomepagesController < ApplicationController
   	
   end
 
+  def faq
+    
+  end
+
   def new_app
     @application = Application.new
   end

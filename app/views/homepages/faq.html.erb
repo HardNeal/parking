@@ -1,0 +1,192 @@
+<%= render 'header' %>
+<%= render 'menu' %>
+<div class="sp_promo_wrapper">
+    <div class="container">
+        <!-- <div class="breadcrumbs"><a href="#" class="breadcrumbs_link">home /</a><a href="#" class="breadcrumbs_link">products /</a><a href="#" class="breadcrumbs_link">Stack Parking System</a></div> -->
+        <div class="sp_promo">
+            <h1 class="sp_promo_title"><%= Parking.last.title unless Parking.last.nil? %></h1>
+            <p class="sp_promo_text"><%= Parking.last.desc unless Parking.last.nil? %></p>
+            <a href="#" class="sp_promo_btn">GET A QUOTE</a>
+        </div>
+    </div>
+</div>
+<!-- <form id="form"> -->
+<%= form_with model: GetQuote.new, id: 'form', url: create_get_quote_path, local: true do |form| %>
+  <div class="form"><a href="#" class="form_close"><i aria-hidden="true" class="far fa-times-circle"></i></a>
+      <h2>Send Enquiry</h2>
+      <label>Name
+        <%= form.text_field :name, placeholder: 'Your name' %>
+        <!-- <input id="name" type="text" placeholder="Name" required="required"> -->
+      </label>
+      <label>Email
+        <%= form.email_field :email, placeholder: 'Introduce  e-mail' %>
+        <!-- <input id="email" type="email" placeholder="Email" required="required"> -->
+      </label>
+      <label>Phone
+        <%= form.text_field :phone, placeholder: 'Your phone' %>
+        <!-- <input id="tel" type="tel" placeholder="Phone" required="required"> -->
+      </label>
+      <label>Message
+        <%= form.text_area :message, placeholder: 'Your name' %>
+        <!-- <textarea name="#" cols="0" rows="5" placeholder="hi, i like your puzzleparking system, and wonna order it..." required="required"></textarea> -->
+      </label>
+      <div class="submit">
+          <button type="submit">Submit</button>
+      </div>
+  </div>
+<% end %>
+<!-- </form> -->
+<div class="sp_features_wrapper">
+    <div class="sp_features">
+        <div class="container">
+            <!-- <h2 class="sp_features_title">Special Features</h2> -->
+            <div class="row">
+              <div class="sp_features_item">
+                <h1>FAQ</h1>
+                <div class="demo">
+                    <input class="hide" id="hd-1" type="checkbox">
+                    <label for="hd-1">Ce este un sistem de parcare automat?</label>
+                    <div>
+                      Sistemul de parcare automatizat este un mecanism care utilizează un sistem de paleți, ascensoare pentru automatizarea parcării și scoaterea autoturismelor din parcare. Astfel de sisteme se extind pe verticală, crescând suprafața și volumul, pentru a depăși constrângerile de spațiu. Acestea vă permit să maximizați parcarea, și astfel să găzduiți un număr mai mare de automobile într-un spațiu mic sau să reduceți spațiul necesar pentru a parca același număr de mașini și permite parcarea acolo, unde anterior nu ar fi fost spațiu. Locurile de parcare automate pot fi situate deasupra sau dedesubtul solului sau o combinație a celor două și sunt proiectate să găzduiască orice număr de autoturisme.
+                    </div>
+                    <br />
+                    <input class="hide" id="hd-2" type="checkbox">
+                    <label for="hd-2">Pot companiile de locuințe mici să își permită acest sistem ?</label>
+                    <div>
+                      Diferitele tipuri de sisteme de parcare oferite de noi reprezintă o soluție simplă, practică și accesibilă oricărei proprietăți, inclusiv a societăților de locuințe mici.
+                    </div>
+                    <br />
+                    <input class="hide" id="hd-3" type="checkbox">
+                    <label for="hd-3">Ce tip de autoturisme poate găzdui sistemul dvs.?</label>
+                    <div>
+                      Sistemul nostru de parcare este conceput pentru a găzdui vehicule standard cu lungimea de 5300 mm, lățime 2150 mm, înălțime de 1550 mm și greutate de 2000 kg. Dar în cazul în care clientul solicită, putem proiecta un sistem pentru anumite dimensiuni ale autoturismului. SUV-urile contribuie cu aproximativ 5% din piață și, prin urmare, proiectăm un spațiu de 10% pentru SUV-uri pe parcarea de suprafață. Dar, dacă este necesar, poate fi prevăzută o soluție anumită pentru SUV-uri în sistem.
+                    </div>
+                    <br />
+                    <input class="hide" id="hd-4" type="checkbox">
+                    <label for="hd-4">Unde poate fi  montate sistemele de parcare automate ?</label>
+                    <div>
+                      Sistemele automate de parcare pot fi instalate în orice locație, cum ar fi podiumurile, subsolurile, pe acoperișuri, pe terenuri deschise, pe terase sau pe drumurile de acces.
+                    </div>
+                    <br />
+                    <input class="hide" id="hd-5" type="checkbox">
+                    <label for="hd-5">Care este durata de viata a unui astfel de sistem?</label>
+                    <div>
+                      În timp ce soluțiile noastre de parcare sunt durabile, durata de operare a unui sistem automat de parcare mecanică depinde de tipul de sistem, de modul de exploatare și  întreținere a acestuia. Este posibil să fie necesară o revizie completă după 15-20 de ani de funcționare.
+                    </div>
+                    <br />
+                    <input class="hide" id="hd-6" type="checkbox">
+                    <label for="hd-6">Cât de sigură este funcționarea acestor sisteme ?</label>
+                    <div>
+                      Siguranța și securitatea încorporate în funcționarea zilnică a sistemelor noastre sunt de neegalat. Oferim manuale de exploatare și întreținere, și instruire pentru personalul clientului.
+                    </div>
+                    <br />
+                    <input class="hide" id="hd-7" type="checkbox">
+                    <label for="hd-7">Care este costul instalării și funcționării unui sistem automat de parcare?</label>
+                    <div>
+                      Costul depinde de numărul exact de vehicule stocate și de sistemul specific instalat. Autoritățile locale pot avea cerințe suplimentare la capitolul: combaterea incendiilor, supraveghere video și iluminatie. Scopul nostru este de a proiecta un sistem potrivit bugetului clientului și de a menține costurile la un nivel minim. Consumul de energie este destul de redus per parcare, în funcție de sistemul selectat de client
+.                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%= render 'footer' %>
+<script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
+
+<script type="text/javascript" src="/js/why.js"></script>
+
+<script src="/vendor/slick-slider/slick/slick.min.js"></script>
+<script src="/vendor/fancybox/jquery.fancybox.js"></script>
+<script type="/text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<style type="text/css">
+  @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,cyrillic);
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin:0;
+  padding:0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* demo контейнер */
+.demo {
+    max-width: 1024px;
+    padding: 0 20px;
+    margin: 5% 10%;
+}
+/* скрываем чекбоксы и блоки с содержанием */
+.hide,
+.hide + label ~ div {
+    display: none;
+}
+/* вид текста label */
+.hide + label {
+    margin: 0;
+    padding: 0;
+    color: #33322c;
+    cursor: pointer;
+    display: inline-block;
+}
+/* вид текста label при активном переключателе */
+.hide:checked + label {
+    color: red;
+    border-bottom: 0;
+}
+/* когда чекбокс активен показываем блоки с содержанием  */
+.hide:checked + label + div {
+    display: block; 
+    background: #efefef;
+    -moz-box-shadow: inset 3px 3px 10px #7d8e8f;
+    -webkit-box-shadow: inset 3px 3px 10px #7d8e8f;
+    box-shadow: inset 3px 3px 10px #7d8e8f;
+    margin-left: 20px;
+    padding: 10px;
+    /* чуточку анимации при появлении */
+     -webkit-animation:fade ease-in 0.5s; 
+     -moz-animation:fade ease-in 0.5s;
+     animation:fade ease-in 0.5s; 
+}
+/* анимация при появлении скрытых блоков */
+@-moz-keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }
+}
+@-webkit-keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }
+}
+@keyframes fade {
+    from { opacity: 0; }
+to { opacity: 1 }   
+}
+.hide + label:before {
+    background-color: #fac23f;
+    color: #fff;
+    content: "\002B";
+    display: block;
+    float: left;
+    font-size: 14px; 
+    font-weight: bold;
+    height: 16px;
+    line-height: 16px;
+    margin: 3px 5px;
+    text-align: center;
+    width: 16px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.hide:checked + label:before {
+    content: "\2212";
+}
+</style>
