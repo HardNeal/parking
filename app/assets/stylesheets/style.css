@@ -489,8 +489,6 @@ header .sp_wrapper .faq_link {
   min-width: 250px;
 }
 
-
-
 @media screen and (max-width: 768px) {
   .header_bottom {
     left: 0;
@@ -499,7 +497,6 @@ header .sp_wrapper .faq_link {
   .header_bottom .nav_wrapper .logo {
     padding: 60px 0;
   }
-
 
 }
 
@@ -1732,7 +1729,17 @@ ul.tabs li .features_text:before {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
+}
 
+.sp_features_wrapper_faq {
+  background-color: #ffffff;
+  /*background-image: url("../images/stack-parking-system-features.png");*/
+  overflow-y: hidden ! important;
+  overflow-x: hidden ! important;
+  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 

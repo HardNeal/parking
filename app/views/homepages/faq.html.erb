@@ -36,7 +36,7 @@
   </div>
 <% end %>
 <!-- </form> -->
-<div class="sp_features_wrapper">
+<div class="sp_features_wrapper_faq">
     <div class="sp_features">
         <div class="container">
             <!-- <h2 class="sp_features_title">Special Features</h2> -->
@@ -44,47 +44,14 @@
               <div class="sp_features_item">
                 <h1>FAQ</h1>
                 <div class="demo">
+                  <% Faq.all.each do |faq| %>
                     <input class="hide" id="hd-1" type="checkbox">
-                    <label for="hd-1">Ce este un sistem de parcare automat?</label>
+                    <label for="hd-1"><%= faq.title %></label>
                     <div>
-                      Sistemul de parcare automatizat este un mecanism care utilizează un sistem de paleți, ascensoare pentru automatizarea parcării și scoaterea autoturismelor din parcare. Astfel de sisteme se extind pe verticală, crescând suprafața și volumul, pentru a depăși constrângerile de spațiu. Acestea vă permit să maximizați parcarea, și astfel să găzduiți un număr mai mare de automobile într-un spațiu mic sau să reduceți spațiul necesar pentru a parca același număr de mașini și permite parcarea acolo, unde anterior nu ar fi fost spațiu. Locurile de parcare automate pot fi situate deasupra sau dedesubtul solului sau o combinație a celor două și sunt proiectate să găzduiască orice număr de autoturisme.
+                      <%= faq.description %>
                     </div>
                     <br />
-                    <input class="hide" id="hd-2" type="checkbox">
-                    <label for="hd-2">Pot companiile de locuințe mici să își permită acest sistem ?</label>
-                    <div>
-                      Diferitele tipuri de sisteme de parcare oferite de noi reprezintă o soluție simplă, practică și accesibilă oricărei proprietăți, inclusiv a societăților de locuințe mici.
-                    </div>
-                    <br />
-                    <input class="hide" id="hd-3" type="checkbox">
-                    <label for="hd-3">Ce tip de autoturisme poate găzdui sistemul dvs.?</label>
-                    <div>
-                      Sistemul nostru de parcare este conceput pentru a găzdui vehicule standard cu lungimea de 5300 mm, lățime 2150 mm, înălțime de 1550 mm și greutate de 2000 kg. Dar în cazul în care clientul solicită, putem proiecta un sistem pentru anumite dimensiuni ale autoturismului. SUV-urile contribuie cu aproximativ 5% din piață și, prin urmare, proiectăm un spațiu de 10% pentru SUV-uri pe parcarea de suprafață. Dar, dacă este necesar, poate fi prevăzută o soluție anumită pentru SUV-uri în sistem.
-                    </div>
-                    <br />
-                    <input class="hide" id="hd-4" type="checkbox">
-                    <label for="hd-4">Unde poate fi  montate sistemele de parcare automate ?</label>
-                    <div>
-                      Sistemele automate de parcare pot fi instalate în orice locație, cum ar fi podiumurile, subsolurile, pe acoperișuri, pe terenuri deschise, pe terase sau pe drumurile de acces.
-                    </div>
-                    <br />
-                    <input class="hide" id="hd-5" type="checkbox">
-                    <label for="hd-5">Care este durata de viata a unui astfel de sistem?</label>
-                    <div>
-                      În timp ce soluțiile noastre de parcare sunt durabile, durata de operare a unui sistem automat de parcare mecanică depinde de tipul de sistem, de modul de exploatare și  întreținere a acestuia. Este posibil să fie necesară o revizie completă după 15-20 de ani de funcționare.
-                    </div>
-                    <br />
-                    <input class="hide" id="hd-6" type="checkbox">
-                    <label for="hd-6">Cât de sigură este funcționarea acestor sisteme ?</label>
-                    <div>
-                      Siguranța și securitatea încorporate în funcționarea zilnică a sistemelor noastre sunt de neegalat. Oferim manuale de exploatare și întreținere, și instruire pentru personalul clientului.
-                    </div>
-                    <br />
-                    <input class="hide" id="hd-7" type="checkbox">
-                    <label for="hd-7">Care este costul instalării și funcționării unui sistem automat de parcare?</label>
-                    <div>
-                      Costul depinde de numărul exact de vehicule stocate și de sistemul specific instalat. Autoritățile locale pot avea cerințe suplimentare la capitolul: combaterea incendiilor, supraveghere video și iluminatie. Scopul nostru este de a proiecta un sistem potrivit bugetului clientului și de a menține costurile la un nivel minim. Consumul de energie este destul de redus per parcare, în funcție de sistemul selectat de client
-.                    </div>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -122,7 +89,7 @@ body {
 .demo {
     max-width: 1024px;
     padding: 0 20px;
-    margin: 5% 10%;
+    margin: 5% -5%;
 }
 /* скрываем чекбоксы и блоки с содержанием */
 .hide,
@@ -135,6 +102,8 @@ body {
     padding: 0;
     color: #33322c;
     cursor: pointer;
+    font-size: 18px;
+    font-weight: 800;
     display: inline-block;
 }
 /* вид текста label при активном переключателе */
