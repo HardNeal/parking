@@ -919,7 +919,7 @@ header .sp_wrapper .faq_link {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 10px;
+  padding: 35px;
 }
 
 @media (max-width: 480px) {
@@ -956,7 +956,7 @@ header .sp_wrapper .faq_link {
 .header_bottom .nav_wrapper .nav .menu_hamb {
   display: none;
   position: absolute;
-  top: -40px;
+  top: 0px;
   right: 0;
   background: #333333;
   width: 40px;
