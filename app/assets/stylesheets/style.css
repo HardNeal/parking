@@ -916,7 +916,7 @@ header .sp_wrapper .faq_link {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 35px;
+  padding: 45px;
 }
 
 @media (max-width: 480px) {
@@ -965,6 +965,7 @@ header .sp_wrapper .faq_link {
 @media screen and (max-width: 768px) {
   .header_bottom .nav_wrapper .nav .menu_hamb {
     display: block;
+    top: 80px;
   }
 
 }
@@ -1567,6 +1568,7 @@ ul.tabs li .features_text:before {
           border-radius: 100px;
   display: inline-block;
   padding: 10px 39px 10px 20px;
+  /*padding: 0px 10px 0px 10px;*/
   font-size: 25px;
   position: relative;
   margin-top: 20px;
