@@ -1772,6 +1772,10 @@ ul.tabs li .features_text:before {
   background: url("../images/barrier.svg") no-repeat top left;
 }
 
+.sp_features_icon.faq {
+  background: url("../images/faq.png") no-repeat top left;
+}
+
 .sp_features_icon.slowmo {
   background: url("../images/wind.svg") no-repeat top left;
 }
