@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="sp_features_item col-12 col-md-4 d-flex flex-column justify-content-between">
-                  <% PuzzleFeature.where(position: 'left').each do |puzzle_feature| %>
+                  <% PuzzleFeature.where(position: 'right').each do |puzzle_feature| %>
                     <div class="row p-b">
                         <span class="sp_features_icon <%= puzzle_feature.icon %> col-3"></span>
 
