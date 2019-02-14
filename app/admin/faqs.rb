@@ -12,14 +12,14 @@ menu parent: 'Faq'
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :id, :title, :description, :position
-form do |f|
-  f.semantic_errors
-  f.inputs do
-    f.input :title
-    f.input :description
-    f.input :position, :as => :select, :collection => [["Right","right"], ["Left","left"]]
-  end
-  f.actions
-end
+permit_params :id, :title, :description
+# form do |f|
+#   f.semantic_errors
+#   f.inputs do
+#     f.input :title
+#     f.input :description
+#     f.input :position, :as => :select, :collection => [["Right","right"], ["Left","left"]]
+#   end
+#   f.actions
+# end
 end

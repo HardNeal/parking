@@ -41,25 +41,8 @@
         <div class="container">
             <h2 class="sp_features_title">FAQ</h2>
 
-            <div class="row">
                 <div class="sp_features_item col-1 col-md-12 d-flex flex-column justify-content-between">
-                  <% Faq.where(position: 'left').each do |puzzle_feature| %>
-                    <div class="row p-b">
-                        <span class="sp_features_icon faq col-3"></span>
-
-                        <div class="col-9">
-                            <h5 class="sp_features_name"><%= puzzle_feature.title %></h5>
-
-                            <p class="sp_features_text">
-                              <%= puzzle_feature.description %>
-                            </p>
-                        </div>
-                    </div>
-                  <% end %>
-                </div>
-
-                <div class="sp_features_item col-1 col-md-12 d-flex flex-column justify-content-between">
-                  <% Faq.where(position: 'right').each do |puzzle_feature| %>
+                  <% Faq.all.each do |puzzle_feature| %>
                     <div class="row p-b">
                         <span class="sp_features_icon faq col-3"></span>
 
