@@ -10,6 +10,10 @@ class HomepagesController < ApplicationController
   	
   end
 
+  def parcare
+    
+  end
+
   def contacts
   	
   end

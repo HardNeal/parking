@@ -5,22 +5,16 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-@font-face {
-  font-family: 'Gotham Pro';
-  src: url('/fonts/GothamPro.eot');
-  src: local('Gotham Pro'), local('GothamPro'),
-    url('/fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/GothamPro.woff') format('woff'),
-    url('/fonts/GothamPro.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 body {
   line-height: 1.3em;
   font-family: 'Montserrat', 'PT Sans',  Arial, "Helvetica Neue", Helvetica, sans-serif;
   background: #E5E5E5;
 }
+
+
+
+
 
 .feedback_popup {
   width: 100%;
@@ -559,7 +553,7 @@ header .sp_wrapper .faq_link {
 .header_bottom .nav_wrapper .logo_icon {
   display: inline-block;
   position: absolute;
-  top: 13px;
+  top: 30px;
   left: 35px;
 }
 
@@ -615,12 +609,11 @@ header .sp_wrapper .faq_link {
 }
 
 .header_bottom .nav_wrapper .nav .phones_link {
-  font-family: "Gotham Pro";
   display: inline-block;
   text-decoration: none;
   color: #000;
   font-size: 12px;
-  /*font-weight: 600;*/
+  font-weight: 600;
   padding: 20px 12px;
   min-width: 122px;
 }
@@ -701,7 +694,7 @@ header .sp_wrapper .faq_link {
   }
 }
 @media screen and (max-width: 980px) {
-  .sp_promo_wrapper .breadcrumbs {
+  .sp_promo_wrapper .breadcrumbs,.sp_promo_wrapper-pzl .breadcrumbs{
     padding-top: 90px;
   }
 }
@@ -793,12 +786,14 @@ header .sp_wrapper .faq_link {
 }
 
 .header_bottom .nav_wrapper .nav .menu_link {
-  font-family: "Gotham Pro";
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
   line-height: normal;
   font-size: 12px;
-  text-transform: uppercase;
   color: #000000;
-  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px;
 }
 
 .header_bottom .nav_wrapper .nav .menu_link:hover, .header_bottom .nav_wrapper .nav .menu_link:active, .header_bottom .nav_wrapper .nav .menu_link:focus {
@@ -863,7 +858,7 @@ header .sp_wrapper .faq_link {
 
 .header_bottom .nav_wrapper .nav .menu .sub_menu {
   padding: 0;
-  background-color: #6F6F6F;
+  background: rgba(14, 14, 14, 0.2) url("../images/maxresdefault.png") no-repeat center center;
   background-size: cover;
   width: 228px;
   left: 0;
@@ -1086,10 +1081,10 @@ header .sp_wrapper .faq_link {
   font-size: 60px;
   font-weight: 800;
   text-transform: uppercase;
+  color: #EFAE00;
   margin: 0;
   font-family: 'Montserrat';
   line-height: 1.1em;
-  color: #fff;
 }
 
 @media screen and (max-width: 768px) {
@@ -1101,12 +1096,10 @@ header .sp_wrapper .faq_link {
 
 .promo_title span {
   display: block;
-  color: #EFAE00;
-
+  color: #fff;
 }
 
 .promo_btn {
-  font-family: 'Gotham Pro';
   text-decoration: none;
   color: #000000;
   /* text-transform: uppercase; */
@@ -1118,7 +1111,6 @@ header .sp_wrapper .faq_link {
   font-size: 25px;
   position: relative;
   margin-top: 60px;
-  /*font-weight: 800;*/
 }
 
 .promo_btn:after {
@@ -1565,6 +1557,7 @@ ul.tabs li .features_text:before {
   font-size: 16px;
   color: #000000;
   text-decoration: none;
+  text-transform: uppercase;
   background: #ffffff;
   -webkit-border-radius: 3px;
           border-radius: 3px;
@@ -1573,7 +1566,6 @@ ul.tabs li .features_text:before {
   font-size: 25px;
   position: relative;
   margin-top: 20px;
-  font-weight: 800;
 }
 
 #form {
@@ -1982,12 +1974,10 @@ div.video-wrapper {
   color: #333333;
   font-size: 13px;
   display: block;
-  margin-bottom: 5px;
-  border-bottom: 1px solid transparent;
-
+  padding-bottom: 5px;
 }
 .footer .footer_item-link:hover {
-  border-bottom: 1px solid #333;
+  padding-left: 5px;
 }
 
 .footer .social_icon {
@@ -2010,3 +2000,60 @@ div.video-wrapper {
   display: block;
 
   }
+/*oma*/
+.sp_promo_wrapper-pzl {
+  background-color: #FAC23B;
+  background-image: url("../puzzlePageImg/puzzle-parking-system-banner.jpg");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 8% 0 5%;
+  position: relative;
+}
+.sp_features_wrapper-pzl {
+  background-color: #ffffff;
+  background-image: url("../puzzlePageImg/puzzle-parking-system-features.png");
+  overflow-y: hidden ! important;
+  overflow-x: hidden ! important;
+  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+
+}
+.video-play-btn {
+  position: absolute;
+  left: 43.5%;
+  z-index: 20;
+  top: 39.9%;
+}
+.pzl-slider-nav img {
+  width: 99%;
+  display: block;
+}
+.pzl-slider-for img {
+  width: 100%;
+  max-height: 500px;
+  display: block;
+  max-width: 700px;
+  margin: 5% auto;
+}
+.pzl-slider-nav {
+  max-width: 706px;
+  margin: 0 auto;
+}
+.pzl-slider-block {
+  padding-bottom: 7%;
+}
+a.sp_promo_btn {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+.row.slide-block {
+  background: #fff;
+}
+@media screen and (max-width: 480px) {
+  .slide-block {
+    max-width: 428px;
+  }
+}

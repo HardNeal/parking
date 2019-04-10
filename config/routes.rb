@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'homepages/puzzle', to: 'homepages#puzzle', as: "puzzle"
   get 'homepages/contacts', to: 'homepages#contacts', as: "contacts"
   get 'homepages/faq', to: 'homepages#faq', as: "faq"
+  get 'homepages/parcare', to: 'homepages#parcare', as: "parcare"
 
   get "new_app" => "homepages#new_app", as: "new_app"
 	post "create_app" => "homepages#create_app", as: "create_app"
