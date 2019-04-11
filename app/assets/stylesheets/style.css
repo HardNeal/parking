@@ -5,6 +5,16 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('/fonts/GothamPro.eot');
+  src: local('Gotham Pro'), local('GothamPro'),
+    url('/fonts/GothamPro.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/GothamPro.woff') format('woff'),
+    url('/fonts/GothamPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   line-height: 1.3em;
@@ -609,11 +619,12 @@ header .sp_wrapper .faq_link {
 }
 
 .header_bottom .nav_wrapper .nav .phones_link {
+  font-family: 'Gotham Pro';
   display: inline-block;
   text-decoration: none;
   color: #000;
   font-size: 12px;
-  font-weight: 600;
+  /*font-weight: 600;*/
   padding: 20px 12px;
   min-width: 122px;
 }
@@ -786,9 +797,10 @@ header .sp_wrapper .faq_link {
 }
 
 .header_bottom .nav_wrapper .nav .menu_link {
+  font-family: 'Gotham Pro';
   display: inline-block;
   text-decoration: none;
-  font-weight: 600;
+  /*font-weight: 600;*/
   line-height: normal;
   font-size: 12px;
   color: #000000;
@@ -858,7 +870,7 @@ header .sp_wrapper .faq_link {
 
 .header_bottom .nav_wrapper .nav .menu .sub_menu {
   padding: 0;
-  background: rgba(14, 14, 14, 0.2) url("../images/maxresdefault.png") no-repeat center center;
+  background: rgba(14, 14, 14, 0.2);
   background-size: cover;
   width: 228px;
   left: 0;
@@ -1100,6 +1112,7 @@ header .sp_wrapper .faq_link {
 }
 
 .promo_btn {
+  font-family: 'Gotham Pro';
   text-decoration: none;
   color: #000000;
   /* text-transform: uppercase; */
@@ -1525,7 +1538,7 @@ ul.tabs li .features_text:before {
 
 .sp_promo_wrapper {
   background-color: #FAC23B;
-  background-image: url("../images/stack-parking-system-banner.png");
+  background-image: url("../images/puzzle-parking-system-banner.jpg");
   background-position: center right;
   background-repeat: no-repeat;
   background-size: contain;
