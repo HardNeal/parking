@@ -714,6 +714,11 @@ header .sp_wrapper .faq_link {
     background-image: none;
   }
 }
+@media screen and (max-width: 768px) {
+  .sp_features_wrapper_parking {
+    background-image: none;
+  }
+}
 @media screen and (max-width: 980px) {
   .container {
     max-width: 800px;
@@ -1546,8 +1551,15 @@ ul.tabs li .features_text:before {
   position: relative;
 }
 
-
-
+.sp_promo_wrapper_parking {
+  background-color: #FAC23B;
+  background-image: url("../images/stack-parking-system-banner.png");
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 8% 0 5%;
+  position: relative;
+}
 
 .sp_promo_wrapper .breadcrumbs_link {
   font-size: 10px;
@@ -1737,7 +1749,6 @@ ul.tabs li .features_text:before {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
-
 }
 
 
