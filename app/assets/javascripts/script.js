@@ -5,9 +5,8 @@ var player,
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('video-placeholder', {
         allow:'autoplay; encrypted-media',
-        videoId: 'iyYCYY5cc8Y',
+        videoId: 'jmAmAhruLQE',
         playerVars: {
-            playlist: 'iyYCYY5cc8Y,JyA4JKZQsfw',
             width: 600,
             height: 400,
             rel:0,
