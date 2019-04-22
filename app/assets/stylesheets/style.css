@@ -331,7 +331,7 @@ header {
   background: #333333;
   line-height: normal;
   font-size: 12px;
-  padding-bottom: 50px;
+  padding-bottom: 110px;
   font-family: 'PT Sans';
 }
 
@@ -465,7 +465,7 @@ header .sp_wrapper .faq_link {
 .header_bottom {
   z-index: 2;
   position: absolute;
-  top: -50px;
+  top: -110px;
   right: 0;
   left: 10%;
   background: #fff;
@@ -1782,8 +1782,28 @@ ul.tabs li .features_text:before {
   background: url("../images/wind.svg") no-repeat top left;
 }
 
+.sp_features_icon.safe {
+  background: url("../images/safe.png") no-repeat top left;
+}
+
 .sp_features_icon.cross {
   background: url("../images/sensor.svg") no-repeat top left;
+}
+
+.sp_features_icon.pht {
+  background: url("../images/photograph.png") no-repeat top left;
+}
+
+.sp_features_icon.tapp {
+  background: url("../images/tapp.png") no-repeat top left;
+}
+
+.sp_features_icon.encrypt {
+  background: url("../images/encrypt.png") no-repeat top left;
+}
+
+.sp_features_icon.stl {
+  background: url("../images/random.png") no-repeat top left;
 }
 
 .sp_features_icon.indication {
