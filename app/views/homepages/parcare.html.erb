@@ -1,155 +1,175 @@
 <%= render 'header' %>
 <%= render 'menu' %>
+
 <div class="sp_promo_wrapper">
     <div class="container">
-        <!-- <div class="breadcrumbs"><a href="#" class="breadcrumbs_link">home /</a><a href="#" class="breadcrumbs_link">products /</a><a href="#" class="breadcrumbs_link">Stack Parking System</a></div> -->
+       <!--  <div class="breadcrumbs">
+            <a class="breadcrumbs_link" href="#">home /</a>
+
+            <a class="breadcrumbs_link" href="#">products /</a>
+
+            <a class="breadcrumbs_link" href="#">Stack Parking System</a>
+        </div> -->
+
         <div class="sp_promo">
-            <h1 class="sp_promo_title">Sistemul de Parcare Puzzl</h1>
-            <p class="sp_promo_text">Sistemul Puzzle este destinat utilizării </p>
-            <p class="sp_promo_text">optime a spațiului pe teren.</p>
-            <p class="sp_promo_text">Este proiectat electromecanic pentru a</p>
-            <p class="sp_promo_text">merge vertical până la 9 nivele și orizontal,</p>
-            <p class="sp_promo_text">la cât mai mult spațiu disponibil pe teren.</p>
-            <p class="sp_promo_text">basement type parking.</p><a href="#" class="sp_promo_btn">GET A QUOTE</a>
+            <h1 class="sp_promo_title"><%= Puzzle.last.title unless Puzzle.last.nil? %></h1>
+
+            <p class="sp_promo_text">
+                <%= Puzzle.last.title unless Puzzle.last.nil? %>    
+            </p>
+
+            <a class="sp_promo_btn" href="#">GET A QUOTE</a>
         </div>
     </div>
 </div>
+
 <form id="form">
-    <div class="form"><a href="#" class="form_close"><i aria-hidden="true" class="far fa-times-circle"></i></a>
+    <div class="form">
+        <a class="form_close" href="#">
+            <i class="far fa-times-circle" aria-hidden="true"></i>
+        </a>
+
         <h2>Send Enquiry</h2>
-        <label>Name
-            <input id="name" type="text" placeholder="Name" required="required">
+
+        <label>
+            Name
+
+            <input id="name" type="text" placeholder="Name" required="required"></input>
         </label>
-        <label>Email
-            <input id="email" type="email" placeholder="Email" required="required">
+
+        <label>
+            Email
+
+            <input id="email" type="email" placeholder="Email" required="required"></input>
         </label>
-        <label>Phone
-            <input id="tel" type="tel" placeholder="Phone" required="required">
+
+        <label>
+            Phone
+
+            <input id="tel" type="tel" placeholder="Phone" required="required"></input>
         </label>
-        <label>Message
-            <textarea name="#" cols="0" rows="5"
-                      placeholder="hi, i like your puzzleparking system, and wonna order it..."
-                      required="required"></textarea>
+
+        <label>
+            Message
+
+            <textarea name="#" cols="0" rows="5" placeholder="hi, i like your puzzleparking system, and wonna order it..." required="required"></textarea>
         </label>
+
         <div class="submit">
             <button type="submit">Submit</button>
         </div>
     </div>
 </form>
-<div class="sp_features_wrapper-pzl">
+
+<div class="sp_features_wrapper">
     <div class="sp_features">
         <div class="container">
-            <div class="sp_features_title">Caracteristici Speciale</div>
+            <h2 class="sp_features_title">Special Features</h2>
+
             <div class="row">
                 <div class="sp_features_item col-12 col-md-4 d-flex flex-column justify-content-between">
-                    <div class="row p-b"><span class="sp_features_icon barrier col-3"></span>
+                  <% PuzzleFeature.where(position: 'left').each do |puzzle_feature| %>
+                    <div class="row p-b">
+                        <span class="sp_features_icon <%= puzzle_feature.icon %> col-3"></span>
+
                         <div class="col-9">
-                            <h5 class="sp_features_name">Bariera tubulară galbenă </h5>
-                            <p class="sp_features_text">Bariera în cauză asigură că șoferul a ajuns la capătul paletei și că lasă automobilul fără a-și face griji, știind că autoturismul său este parcat în siguranță.</p>
+                            <h5 class="sp_features_name"><%= puzzle_feature.title %></h5>
+
+                            <p class="sp_features_text">
+                              <%= puzzle_feature.desc %>
+                            </p>
                         </div>
                     </div>
-                    <div class="row p-b"><span class="sp_features_icon encrypt col-3"></span>
-                        <div class="col-9">
-                            <h5 class="sp_features_name">Blocaj de siguranță</h5>
-                            <p class="sp_features_text">Acest mecanism de blocare de siguranță trimite semnale către PLC în timp ce blochează și deblochează paleta și până la care nu poate fi efectuată nici o altă operațiune prin nici un mijloc.</p>
-                        </div>
-                    </div>
-                    <div class="row p-b"><span class="sp_features_icon safe col-3"></span>
-                        <div class="col-9">
-                            <h5 class="sp_features_name">Platforme anti – corozive </h5>
-                            <p class="sp_features_text">Platforma este realizată din tablă galvanizată și vopseaua de înaltă calitate este utilizată pentru foi laterale.</p>
-                        </div>
-                    </div>
+                  <% end %>
                 </div>
+
                 <div class="sp_features_item col-12 col-md-4 d-flex flex-column justify-content-between">
-                    <div class="row p-b"><span class="sp_features_icon stl col-3"></span>
+                  <% PuzzleFeature.where(position: 'right').each do |puzzle_feature| %>
+                    <div class="row p-b">
+                        <span class="sp_features_icon <%= puzzle_feature.icon %> col-3"></span>
+
                         <div class="col-9">
-                            <h5 class="sp_features_name">Furnizarea pentru conectarea la Master Controler</h5>
-                            <p class="sp_features_text">Opțiunea de a conectare la Master Controler împreună cu toate construcțiile din SMART PARKING LOGIC, întreaga instalație de parcare poate fi gestionată cu ușurință</p>
+                            <h5 class="sp_features_name"><%= puzzle_feature.title %></h5>
+
+                            <p class="sp_features_text">
+                              <%= puzzle_feature.desc %>
+                            </p>
                         </div>
                     </div>
-                    <div class="row p-b"><span class="sp_features_icon pht col-3"></span>
-                        <div class="col-9">
-                            <h5 class="sp_features_name">Indication Lamps and Buzzers</h5>
-                            <p class="sp_features_text">The sensor makes sure the car parked above does not move
-                                downwards when there is car parked below, even if it is signaled (knowingly or
-                                unknowingly) by anyone to come down.</p>
-                        </div>
-                    </div>
-                    <div class="row p-b"><span class="sp_features_icon tapp col-3"></span>
-                        <div class="col-9">
-                            <h5 class="sp_features_name">Ecranul tactil</h5>
-                            <p class="sp_features_text">Afișajul cu ecranul touch a fost conceput pentru a stabili o comunicare bidirecțională între sistem și utilizator. Acest lucru asigură o experiență pozitivă de parcare.</p>
-                        </div>
-                    </div>
+                  <% end %>
                 </div>
+
                 <div class="sp_features_item col-12 col-md-4 sp_bg"></div>
             </div>
         </div>
     </div>
 </div>
-<div class="container">
 
-    <div class="gallery row justify-content-between">
-        <div class="gallery_item col-12 col-md-6">
-            <div class="pzl-video-description">
-                <p>Sistemul Puzzle este destinat utilizării optime a spațiului pe teren. Este proiectat electromecanic
-                    pentru a merge vertical până la 9 nivele și orizontal, la cât mai mult spațiu disponibil pe
-                    teren</p>
+<div class="visual_demo">
+    <div class="container">
+        <h4 class="visual_demo_title">
+            Case: If you wish to retrieve Car No. 7
+        </h4>
+
+        <p class="visual_demo_desc">
+            Parking makes us go in circles, see what our circles have in store for you...
+        </p>
+
+        <div class="d-flex justify-content-center flex-column align-items-center">
+            <button class="mp4player" id="play">Retrieve Car №7</button>
+
+            <div >
+                <iframe width="860" height="400" src="https://www.youtube.com/embed/jmAmAhruLQE?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="gallery row justify-content-between">
         <div class="gallery_item col-12 col-md-6 pos-rel">
             <h2 class="gallery_item_title">SEE VIDEO</h2>
             <div class='video-wrapper'>
-                <!-- <img class="video-play-btn" src="../images/Vector.png"> -->
-                <!-- <a href="javascript://" class='button'></a> -->
+                <a href="javascript://" class='button'></a>
                 <div class='video'>
-                    <iframe id="player" width="560" height="300"
-                            src="https://www.youtube.com/embed/z4UpIqlU0-E?showinfo=0" frameborder="0"
-                            allowfullscreen></iframe>
-                    <a class="close" href="#"><img src="/images/close.svg" alt=""></a>
+                    <iframe id="player" width="560" height="300" src="https://www.youtube.com/embed/T1Hxel2r2lc?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                    <a class="close" href="#"><img src="images/close.svg" alt=""></a>
                 </div>
             </div>
         </div>
+        <div class="gallery_item col-12 col-md-6">
+            <h2 class="gallery_item_title">SEE GALLERY</h2>
+            <div class="row">
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="../uploads/grp.png" data-fancybox="images" class="gallery_img"><img src="../uploads/grp.png"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="../uploads/crl2.jpg" data-fancybox="images" class="gallery_img"><img src="../uploads/crl2.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="/uploads/crl5.jpg" data-fancybox="images" class="gallery_img"><img src="/uploads/crl5.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="../uploads/crl1.jpg" data-fancybox="images" class="gallery_img"><img src="../uploads/crl1.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="../uploads/crl3.jpg" data-fancybox="images" class="gallery_img"><img src="../uploads/crl3.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="../uploads/crl4.jpg" data-fancybox="images" class="gallery_img"><img src="../uploads/crl4.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="../uploads/crl4.jpg" data-fancybox="images" class="gallery_img"><img src="../uploads/crl6.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="../uploads/crl4.jpg" data-fancybox="images" class="gallery_img"><img src="../uploads/crl8.jpg"></a>
+                    <a class="col-12 col-md-6 col-lg-4 img-wrap " href="../uploads/crl4.jpg" data-fancybox="images" class="gallery_img"><img src="../uploads/crl.jpg"></a>
+            </div>
+        </div>
+    </div>
+</div>
 
-    </div>
-</div>
-<div class="row slide-block" style="margin-right: 0;">
-<div class="container">
-    <h3>Gallery</h3>
-    <div class="pzl-slider-block col-sm">
-        <div class="pzl-slider-for">
-            <div><img src="../uploads/grp.png"></div>
-            <div><img src="../uploads/crl2.jpg"></div>
-            <div><img src="../uploads/crl1.jpg"></div>
-            <div><img src="../uploads/crl3.jpg"></div>
-            <div><img src="../uploads/crl4.jpg"></div>
-        </div>
-        <div class="pzl-slider-nav">
-            <div><img src="../uploads/grp.png"></div>
-            <div><img src="../uploads/crl2.jpg"></div>
-            <div><img src="../uploads/crl1.jpg"></div>
-            <div><img src="../uploads/crl3.jpg"></div>
-            <div><img src="../uploads/crl4.jpg"></div>
-        </div>
-    </div>
-</div>
-</div>
 
 
 <%= render 'footer' %>
 
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <script type="text/javascript" src="/js/jquery-3.3.1.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+
 <script type="text/javascript" src="/js/why.js"></script>
+
 <script src="/vendor/slick-slider/slick/slick.min.js"></script>
 <script src="/vendor/fancybox/jquery.fancybox.js"></script>
-<script type="/text/javascript" src="/js/script.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
 
-<style>
-    a:-webkit-any-link {
-        color: -webkit-link;
-        cursor: pointer;
-        text-decoration: underline;
-    }
-</style>
+<script type="text/javascript" src="/js/script.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
