@@ -2101,3 +2101,33 @@ a.sp_promo_btn {
     max-width: 428px;
   }
 }
+@media screen and (max-width: 480px){
+  .sp_features_wrapper-pzl {
+      background: #fff;
+  }
+  .sp_promo_wrapper {
+    background-image: unset;
+  }
+  .header_bottom {
+    top: -82px !important;
+  }
+}
+
+@media screena and (max-width:480px){
+  .sp_features_wrapper-pzl {
+    background: #fff;
+  }
+  .sp_promo_wrapper {
+    background-image: unset;
+  }
+  .header_bottom {
+  top: -82px !important;
+  }
+
+  .header_bottom .nav_wrapper .nav .menu li {
+    background-color: #323232;
+  }
+  .sp_features_wrapper {
+    background-image: unset;
+  }
+}
